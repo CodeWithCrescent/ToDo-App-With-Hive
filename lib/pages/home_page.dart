@@ -7,12 +7,24 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow.shade200,
+      backgroundColor: Colors.yellow.shade100,
       appBar: AppBar(
         title: const Text('TO DO'),
-      ),body: ListView(
+      ),
+      body: ListView(
         children: [
-          ToDoTile(),
+          ToDoTile(
+            taskName: 'A test task',
+            taskCompleted: true,
+          ),
+          ToDoTile(
+            taskName: 'Hello tuesday',
+            taskCompleted: false,
+          ),
+          ToDoTile(
+            taskName: 'Wake up early',
+            taskCompleted: false,
+          ),
         ],
       ),
     );

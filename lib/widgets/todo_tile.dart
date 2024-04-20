@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:todo_hive/utils/colors.dart';
 
 class ToDoTile extends StatelessWidget {
   final String taskName;
@@ -20,18 +22,24 @@ class ToDoTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 25.0, left: 25.0, right: 25.0),
       child: Slidable(
-        endActionPane: ActionPane(motion: const StretchMotion(), children: [
-          SlidableAction(
-            onPressed: deleteFunction,
-            icon: Icons.delete,
-            backgroundColor: Colors.red,
-            borderRadius: BorderRadius.circular(12),
-          )
-        ]),
+        endActionPane: ActionPane(
+          motion: const StretchMotion(),
+          children: [
+            SlidableAction(
+              onPressed: deleteFunction,
+              icon: Icons.delete,
+              autoClose: true,
+              foregroundColor: GlobalColors.whiteTextColor,
+              backgroundColor: GlobalColors.redColor,
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ],
+        ),
+        closeOnScroll: true,
         child: Container(
           padding: const EdgeInsets.all(24.0),
           decoration: BoxDecoration(
-            color: Colors.yellow,
+            color: GlobalColors.whiteColor,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -39,12 +47,13 @@ class ToDoTile extends StatelessWidget {
               Checkbox(
                 value: taskCompleted,
                 onChanged: onChanged,
-                activeColor: Colors.black,
+                activeColor: GlobalColors.mainColor,
               ),
               Text(
                 taskName,
                 style: TextStyle(
                   fontSize: 16,
+                  color: GlobalColors.blackColor,
                   decoration: taskCompleted
                       ? TextDecoration.lineThrough
                       : TextDecoration.none,

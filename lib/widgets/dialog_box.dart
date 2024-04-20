@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_hive/utils/colors.dart';
 import 'package:todo_hive/widgets/dialog_buttons.dart';
 
 class DialogBox extends StatelessWidget {
@@ -15,7 +16,7 @@ class DialogBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.yellow,
+      backgroundColor: GlobalColors.bgColor,
       content: Container(
         height: 150,
         child: Column(
@@ -34,16 +35,16 @@ class DialogBox extends StatelessWidget {
               controller: controller,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "e.g: Do all class assignment",
+                hintText: "e.g: Do class assignment",
               ),
             ),
             // Buttons -> Save + Cancel
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Save button
                 DialogButton(
-                  text: 'Save',
+                  text: 'Add',
                   onPressed: onSave,
                 ),
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_hive/utils/colors.dart';
 
 class DialogButton extends StatelessWidget {
   final String text;
@@ -14,7 +15,8 @@ class DialogButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
-      color: Colors.yellow,
+      color: GlobalColors.mainColor,
+      textColor: GlobalColors.whiteTextColor,
       child: Text(text),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo_hive/pages/home_page.dart';
+import 'package:todo_hive/utils/colors.dart';
 
 void main() async {
   // init the hive
@@ -24,8 +25,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.yellow,
+        appBarTheme: AppBarTheme(
+          backgroundColor: GlobalColors.mainColor,
+          foregroundColor: GlobalColors.whiteColor,
           centerTitle: true,
           // elevation: 0,
         ),

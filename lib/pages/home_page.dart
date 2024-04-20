@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo_hive/data/database.dart';
+import 'package:todo_hive/utils/colors.dart';
 import 'package:todo_hive/widgets/dialog_box.dart';
 import 'package:todo_hive/widgets/todo_tile.dart';
 
@@ -74,13 +75,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow.shade100,
+      backgroundColor: GlobalColors.bgColor,
       appBar: AppBar(
         title: const Text('TO DO'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: createNewTask,
-        backgroundColor: Colors.yellow,
+        backgroundColor: GlobalColors.mainColor,
+        foregroundColor: GlobalColors.whiteColor,
         child: const Icon(Icons.add),
       ),
       body: ListView.builder(
